@@ -33,9 +33,9 @@ _REDIRECTS = {
 for img_name in _TXPI_IMAGES:
     _REDIRECTS['/images/latest_{0}'.format(img_name)] = _TXPI_IMAGES[img_name]['url']
 
+freezer = Freezer(app)
 
 if __name__ == '__main__':
-    freezer = Freezer(app)
     freezer.freeze()
     with open(os.path.join(freezer.root, '_redirects'), 'w') as f:
         for k, v in _REDIRECTS.items():
