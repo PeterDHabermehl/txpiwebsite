@@ -14,6 +14,6 @@
 """\
 Runs the TX-Pi website locally.
 """
-from txpiweb.webapp import app
+from webapp import app
 
 app.run(debug=True, port=6556)
