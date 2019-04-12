@@ -3,3 +3,4 @@
 *.pyo
 *.bak
 .idea
+build/
