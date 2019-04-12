@@ -1,0 +1,9 @@
+@import 'picnic.min.css';
+
+nav {
+  position: fixed;
+}
+
+.main {
+  padding: 2em;
+}

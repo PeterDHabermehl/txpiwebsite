@@ -1,0 +1,23 @@
+{% extends "skel_en.html" %}
+{% block main %}
+<h1>TX-Pi images</h1>
+<p>Download prepared TX-Pi images</p>
+<div class="flex">
+  {% for img_name in images %}
+  <div>
+    <article class="card">
+      <header>
+        <h3>{{ images[img_name]["name"] }}</h3>
+      </header>
+      <section>
+        <dl>
+          <dt>Checksum</dt><dd>{{ images[img_name]["checksum"] }}</dd>
+          <dt>Release</dt><dd>{{ images[img_name]["date"] }}</dd>
+        </dl>
+      </section>
+      <footer><a href="/images/latest_{{ img_name }}"><button>Download</button></a></footer>
+    </article>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
