@@ -25,7 +25,6 @@ app.config['FREEZER_REDIRECT_POLICY'] = 'error'
 _SETUP_SCRIPT_URL = 'https://raw.githubusercontent.com/ftCommunity/tx-pi/master/setup/tx-pi-setup.sh'
 
 _REDIRECTS = {
-    '/': '/en/',
     '/tx-pi-setup.sh': _SETUP_SCRIPT_URL,
 }
 
