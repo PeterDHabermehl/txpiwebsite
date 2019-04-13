@@ -34,6 +34,14 @@ for img_name in _TXPI_IMAGES:
 
 freezer = Freezer(app)
 
+# Since the root contains no url_for invocation but JS only, it's necessary
+# to help the freezer to generate everything in /de/ and /en/
+@freezer.register_generator
+def home():
+    for lang in ('en', 'de'):
+        yield {'lang': lang}
+
+
 if __name__ == '__main__':
     freezer.freeze()
     with open(os.path.join(freezer.root, '_redirects'), 'w') as f:
