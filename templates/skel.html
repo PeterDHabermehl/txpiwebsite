@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANG }}">
 <head>
   <meta charset="utf-8">
-  <title>{{ page_title }}</title>
+  <title>{% block page_title %}TX-Pi{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,18 +14,13 @@
 </head>
 <body>
 <nav>
-  <a href="/en/" class="brand">
-    <span>TX-Pi</span>
-  </a>
-
-  <!-- responsive-->
+  <a href="{{ url_for('home', lang=LANG) }}" class="brand"><span>TX-Pi</span></a>
   <input id="bmenub" type="checkbox" class="show">
   <label for="bmenub" class="burger pseudo button">menu</label>
-
   <div class="menu">
-    <a href="{{ url_for('installation_en') }}" class="pseudo button">Installation</a>
-    <a href="{{ url_for('images_en') }}" class="pseudo button">Images</a>
-    <a href="https://github.com/ftCommunity/tx-pi" class="pseudo button icon-g">Github</a>
+    {% for name, endpoint in MAIN_MENU %}
+      <a href="{% if '/' not in endpoint %}{{ url_for(endpoint, lang=LANG) }}{% else %}{{ endpoint }}{% endif %}" class="pseudo button">{{ name }}</a>
+    {% endfor %}
   </div>
 </nav>
 <div class="main">{% block main %}{% endblock %}</div>
