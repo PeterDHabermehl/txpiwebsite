@@ -5,6 +5,7 @@
 <p>SD-Karten-Images zum Download</p>
 <div class="flex">
   {% for img_name in images %}
+      {% set image = images[img_name] %}
       {% include "image.html" %}
   {% endfor %}
 </div>

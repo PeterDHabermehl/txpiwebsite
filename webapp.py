@@ -112,4 +112,5 @@ def inject_defaults():
             # Variables used by image.html
             'RELEASED': 'Released' if is_en else 'Veröffentlicht',
             'CHECKSUM': 'Checksum (MD5)' if is_en else 'Checksumme (MD5)',
+            'SIZE': 'Size' if is_en else 'Größe',
     }
