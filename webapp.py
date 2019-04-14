@@ -55,11 +55,31 @@ def index():
   <head>
     <script type="text/javascript">
       var lang = (navigator.language || navigator.userLanguage);
-      if (lang && lang.substr(0,2).toLowerCase() === "de") {
+      if (lang && lang.substr(0, 2).toLowerCase() === "de") {
         window.location = "/de/"
       }
     </script>
     <meta http-equiv="refresh" content="0; url=/en/">
+  </head>
+</html>
+'''
+
+
+@app.route('/images/')
+def images_root():
+    """\
+    Handle /images/ and redirect to /en/images/ or /de/images/
+    """
+    return '''<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      var lang = (navigator.language || navigator.userLanguage);
+      if (lang && lang.substr(0, 2).toLowerCase() === "de") {
+        window.location = "/de/images/"
+      }
+    </script>
+    <meta http-equiv="refresh" content="0; url=/en/images/">
   </head>
 </html>
 '''
