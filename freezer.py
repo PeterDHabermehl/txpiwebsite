@@ -15,7 +15,7 @@ Freezes the TX-Pi web application.
 """
 import os
 from flask_frozen import Freezer
-from webapp import app, _TXPI_IMAGES
+from webapp import app, TXPI_IMAGES
 
 # Treat redirects as error since the Flask test client cannot handle
 # external URIs anyway
@@ -26,8 +26,8 @@ _REDIRECTS = {
 }
 
 # Generate redirect rules for the TX-Pi images
-for img_name in _TXPI_IMAGES:
-    _REDIRECTS['/images/latest_{0}'.format(img_name)] = _TXPI_IMAGES[img_name]['url']
+for img_name in TXPI_IMAGES:
+    _REDIRECTS['/images/latest_{0}'.format(img_name)] = TXPI_IMAGES[img_name]['url']
 
 freezer = Freezer(app)
 

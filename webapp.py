@@ -35,10 +35,10 @@ app.jinja_env.undefined = jinja2.StrictUndefined
 # Available TX-Pi images
 import configparser
 import json
-_TXPI_IMAGES = configparser.ConfigParser()
-_TXPI_IMAGES.read(os.path.join(os.path.dirname(__file__), 'images.ini'))
+TXPI_IMAGES = configparser.ConfigParser()
+TXPI_IMAGES.read(os.path.join(os.path.dirname(__file__), 'images.ini'))
 # Convert to dict for an easier access
-_TXPI_IMAGES = json.loads(json.dumps(_TXPI_IMAGES._sections))
+TXPI_IMAGES = json.loads(json.dumps(TXPI_IMAGES._sections))
 del configparser
 del json
 
@@ -78,7 +78,7 @@ def images(lang):
     """\
     Renders a page about the images.
     """
-    images = _TXPI_IMAGES
+    images = TXPI_IMAGES
     return render_template('images_{0}.html'.format(lang), images=images)
 
 
