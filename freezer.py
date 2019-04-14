@@ -41,5 +41,5 @@ def home():
 if __name__ == '__main__':
     freezer.freeze()
     with open(os.path.join(freezer.root, '_redirects'), 'w') as f:
-        for k, v in _REDIRECTS.items():
-            f.write('{0}    {1}    302\n'.format(k, v))
+        for src, target in _REDIRECTS.items():
+            f.write('{0}    {1}    302\n'.format(src, target))
