@@ -21,13 +21,11 @@ from webapp import app, _TXPI_IMAGES
 # external URIs anyway
 app.config['FREEZER_REDIRECT_POLICY'] = 'error'
 
-# URL to the TX-Pi setup script
-_SETUP_SCRIPT_URL = 'https://raw.githubusercontent.com/ftCommunity/tx-pi/master/setup/tx-pi-setup.sh'
-
 _REDIRECTS = {
-    '/tx-pi-setup.sh': _SETUP_SCRIPT_URL,
+    '/tx-pi-setup.sh': 'https://raw.githubusercontent.com/ftCommunity/tx-pi/master/setup/tx-pi-setup.sh',
 }
 
+# Generate redirect rules for the TX-Pi images
 for img_name in _TXPI_IMAGES:
     _REDIRECTS['/images/latest_{0}'.format(img_name)] = _TXPI_IMAGES[img_name]['url']
 
@@ -37,8 +35,7 @@ freezer = Freezer(app)
 # to help the freezer to generate everything in /de/ and /en/
 @freezer.register_generator
 def home():
-    for lang in ('en', 'de'):
-        yield {'lang': lang}
+    return ({'lang': lang} for lang in ('en', 'de'))
 
 
 if __name__ == '__main__':
