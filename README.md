@@ -14,7 +14,7 @@ To use Markdown in templates, use the filter ``{% filter markdown %}Markdown her
 
 The file ``images.ini`` contains information about available pre-built 
 SD card images. This file is automatically used by the web application
-and for creating redirect rules.
+and by the freezer script to create redirect rules.
 
 Commits to the "master" branch should update the website https://www.tx-pi.de/
 
