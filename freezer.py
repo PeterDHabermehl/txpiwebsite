@@ -23,6 +23,7 @@ app.config['FREEZER_REDIRECT_POLICY'] = 'error'
 
 _REDIRECTS = {
     '/tx-pi-setup.sh': 'https://raw.githubusercontent.com/ftCommunity/tx-pi/master/setup/tx-pi-setup.sh',
+    '/unstable/tx-pi-setup.sh': 'https://raw.githubusercontent.com/ftCommunity/tx-pi/develop/setup/tx-pi-setup.sh',
 }
 
 # Generate redirect rules for the TX-Pi images

@@ -1,3 +1,6 @@
+# 2019-04-27
+* Added redirect to the ``tx-pi-setup.sh`` script in the "develop" branch
+
 # 2019-04-14
 * Internal refactoring
 * Removed CSS transitions
