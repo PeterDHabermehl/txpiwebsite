@@ -1,6 +1,9 @@
 # Changes
 
-## 2019-04-27
+## 2019-05-dd
+* Added installation hint for Waveshare 3,5" B rev. 2 displays.
+
+## 2019-05-03
 * Recommend Stretch
 
 ## 2019-04-27
@@ -10,8 +13,8 @@
 * Internal refactoring
 * Removed CSS transitions
 
-# 2019-04-13
-#* Added support for German language
+## 2019-04-13
+* Added support for German language
 
 ## 2019-04-12
 * Initial release
