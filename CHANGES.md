@@ -1,6 +1,6 @@
 # Changes
 
-## 2019-05-dd
+## 2019-05-04
 * Added installation hint for Waveshare 3,5" B rev. 2 displays.
 
 ## 2019-05-03
